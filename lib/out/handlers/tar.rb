@@ -1,5 +1,3 @@
-require 'coderay'
-
 class Out::Handlers::Tar < Out::Handler
   match /^.*tar.?(gz|xz|bz2)?$/
 
