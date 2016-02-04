@@ -31,3 +31,6 @@ require 'out/handlers/python'
 require 'out/handlers/sql'
 require 'out/handlers/xml'
 require 'out/handlers/yaml'
+
+require 'out/handlers/tar'
+require 'out/handlers/csv'
