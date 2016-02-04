@@ -14,9 +14,11 @@ module Out::Handlers
   end
 end
 
+# General handlers
 require 'out/handlers/directory'
 require 'out/handlers/file'
 
+# Code handlers
 require 'out/handlers/ruby'
 require 'out/handlers/erb'
 require 'out/handlers/c'
@@ -32,5 +34,9 @@ require 'out/handlers/sql'
 require 'out/handlers/xml'
 require 'out/handlers/yaml'
 
-require 'out/handlers/tar'
+# Table handers
 require 'out/handlers/csv'
+
+# Archive handlers
+require 'out/handlers/tar'
+require 'out/handlers/zip'
