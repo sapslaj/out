@@ -40,3 +40,6 @@ require 'out/handlers/csv'
 # Archive handlers
 require 'out/handlers/tar'
 require 'out/handlers/zip'
+
+# Directory handlers
+require 'out/handlers/git'
