@@ -2,9 +2,6 @@
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 require 'out'
 
-if ARGV.empty?
-  puts "Output all the things"
-  abort
-else
-  Out.run(ARGV)
-end
+ARGV.push('.') if ARGV.empty?
+
+Out.run(ARGV)
