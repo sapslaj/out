@@ -1,26 +1,47 @@
 # Out
 
-TODO
+`out` is a program that outputs everything. This is a proof of concept and probably isn't ready for production.
 
 ## Installation
 
-    $ gem install out
+```sh
+git clone https://github.com/sapslaj/out
+cd out
+rake install
+```
 
 ## Usage
 
-    $ out some_directory # Just like running `ls some_directory`
-    another_directory   some_file   another_file
+`out some_file`
 
-    $ out some_file # Just like running `cat some_file`
-    Haxx0r ipsum tarball suitably small values cat regex rm -rf daemon gurfle fork ascii infinite loop hexadecimal null epoch strlen script kiddies. Afk d00dz do default kilo Starcraft giga gobble hash foo else exception crack gnu ban finally class double it's a feature gcc server worm Dennis Ritchie. Bit grep for break man pages mailbomb fatal cd mutex leet bar loop false terminal big-endian pwned unix tera char.
+or
 
-## Development
+`out some_directory`
 
-TODO
+![Demo](http://i.imgur.com/QHG4jwx.png)
 
-## Contributing
+## Making your own handlers
 
-TODO
+*See `lib/out/handlers` for examples.*
+
+```ruby
+# Subclass Out::Handler
+class DemoHandler < Out::Handler
+  match /^demo$/ # Match using a regex
+  match "demo" # Match using a string
+  match proc { |t| t == 'demo' } # Match using a proc
+
+  # Calls this method if it's matched
+  def execute(*arguments)
+    puts File.read(arguments.last)
+  end
+end
+
+```
+
+# Contributing
+
+The API is _super_ unstable at this point, and the final project will most likely be rewritten in a more portable language, so contribute at your own risk. There are also no tests. So. Have fun with that.
 
 ## License
 
